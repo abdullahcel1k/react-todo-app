@@ -4,6 +4,7 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { PriorityEnums } from '../../../core/enums/PriorityEnums';
 import { StatusEnums } from '../../../core/enums/StatusEnums';
+import Swal from 'sweetalert2';
 
 type Props = {
     id: string,
@@ -19,9 +20,17 @@ const TodoModal = (props: Props) => {
 
     const _handleSubmit = (values, resetForm) => {
         props.request(values).then(() => {
-            console.log(`kayıt başarılı`)
+            Swal.fire(
+                'Created!',
+                'Your task has been created.',
+                'success'
+            );            
         }).catch(err => {
-            console.log(`Create an error ${err}`);
+            Swal.fire(
+                'Oops...',
+                'Something went wrong!',
+                'error'
+            );
         }).finally(() => {
             resetForm();
             props.fetchData();

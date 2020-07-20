@@ -83,9 +83,12 @@ const TaskGroup = (props: Props) => {
                         <Link type='button' title='show detail' className='btn btn-sm btn-info float-right ml-1' to={`/todo-detail/${item.id}`}>
                             <i className='fa fa-info'></i>
                         </Link>
-                        <Button type="button" className={`btn btn-sm btn-warning float-right`} title='edit task' data-toggle="modal" data-target={`#updatetodomodal`} onClick={() => {}}>
-                            <i className='fa fa-edit'></i>
-                        </Button>
+                        {/* 
+                            TODO : geçici olarak update askıya alındı
+                            <Button type="button" className={`btn btn-sm btn-warning float-right`} title='edit task' data-toggle="modal" data-target={`#updatetodomodal`} onClick={() => {}}>
+                                <i className='fa fa-edit'></i>
+                            </Button> 
+                        */}
                     </Li>
                 ))}
             </TaskGroupList>
